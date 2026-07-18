@@ -3132,6 +3132,9 @@
 				57CDCD892FD5CBD3005BA4C8 /* PBXTargetDependency */,
 			);
 			name = ManicEmuDebug;
+			packageProductDependencies = (
+				576060282D24E8BD00A98B0C /* RswiftLibrary */,
+			);
 			productName = EmojiWorld;
 			productReference = 57CDCF792FD5CBD3005BA4C8 /* ManicEmuDebug.app */;
 			productType = "com.apple.product-type.application";
@@ -3155,6 +3158,9 @@
 				57BFBEB12DD489C700AABF98 /* PBXTargetDependency */,
 			);
 			name = ManicEmuRelease;
+			packageProductDependencies = (
+				576060282D24E8BD00A98B0C /* RswiftLibrary */,
+			);
 			productName = EmojiWorld;
 			productReference = A5A001EF24555A5F006E0F0E /* ManicEmu.app */;
 			productType = "com.apple.product-type.application";
