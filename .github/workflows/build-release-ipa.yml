@@ -1,4 +1,4 @@
-name: Build Debug IPA
+name: Build Release IPA
 
 on:
   push:
@@ -40,22 +40,20 @@ jobs:
         run: |
           xcodebuild clean archive \
             -project ManicEmu/ManicEmu.xcodeproj \
-            -scheme "ManicEmuDebug" \
-            -configuration Debug \
-            -archivePath "$RUNNER_TEMP/ManicEmuDebug.xcarchive" \
-            -sdk iphoneos \
+            -scheme "ManicEmuRelease" \
+            -configuration Release \
+            -archivePath "$RUNNER_TEMP/ManicEmuRelease.xcarchive" \
             -destination "generic/platform=iOS" \
             -skipPackagePluginValidation \
             ONLY_ACTIVE_ARCH=NO \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO \
-            SWIFT_OPTIMIZATION_LEVEL="-Onone"
+            CODE_SIGNING_ALLOWED=NO
 
       - name: 5. Package .app into .ipa
         env:
-          APP_PATH: ${{ runner.temp }}/ManicEmuDebug.xcarchive/Products/Applications/ManicEmuDebug.app
-          IPA_PATH: ${{ runner.temp }}/ManicEmuDebug.ipa
+          APP_PATH: ${{ runner.temp }}/ManicEmuRelease.xcarchive/Products/Applications/ManicEmu.app
+          IPA_PATH: ${{ runner.temp }}/ManicEmuRelease.ipa
         run: |
           test -d "$APP_PATH"
           mkdir -p "$RUNNER_TEMP/Payload"
@@ -67,7 +65,7 @@ jobs:
         if: env.UPLOAD_IPA == 'true'
         uses: actions/upload-artifact@v7
         with:
-          name: ManicEmu-Debug.ipa
-          path: ${{ runner.temp }}/ManicEmuDebug.ipa
+          name: ManicEmu-Release.ipa
+          path: ${{ runner.temp }}/ManicEmuRelease.ipa
           retention-days: 90
           if-no-files-found: error
