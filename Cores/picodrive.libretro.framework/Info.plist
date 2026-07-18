@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b14f8a838f54273a04b475de20ab9c426e9cb7ad0b7636b81ec44bd5b2e9c5cb
-size 724
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>CFBundleExecutable</key>
+    <string>picodrive.libretro</string>
+    <key>CFBundleName</key>
+    <string>picodrive.libretro</string>
+    <key>CFBundleIdentifier</key>
+    <string>picodrive.libretro</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+    <key>MinimumOSVersion</key>
+    <string>12.0</string>
+    <key>CFBundlePackageType</key>
+    <string>FMWK</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+  </dict>
+</plist>

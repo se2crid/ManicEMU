@@ -23,12 +23,13 @@ jobs:
         with:
           submodules: recursive
 
-      - name: 2. Fetch Git LFS Assets from Upstream
+      - name: 2. Restore Oversized Vendored Core
         run: |
-          git config --local lfs.url \
-            https://github.com/Manic-EMU/ManicEMU.git/info/lfs
-          git lfs install --local
-          git lfs pull
+          cat Cores/mame.libretro.framework/mame.libretro.part.* \
+            > Cores/mame.libretro.framework/mame.libretro
+          echo "ede8b95b25fe4351d3e8b8ecc1398e589459d84b68650dfbda535c54f697638b  Cores/mame.libretro.framework/mame.libretro" \
+            | shasum -a 256 -c -
+          chmod +x Cores/mame.libretro.framework/mame.libretro
 
       - name: 3. Configure Xcode Environment
         uses: maxim-lobanov/setup-xcode@v1

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ea9a8fcdfae30f5ab111e1761be48f340557f4072a2523840097f50611e84e9a
-size 712
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>CFBundleExecutable</key>
+    <string>fbneo.libretro</string>
+    <key>CFBundleName</key>
+    <string>fbneo.libretro</string>
+    <key>CFBundleIdentifier</key>
+    <string>fbneo.libretro</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+    <key>MinimumOSVersion</key>
+    <string>12.0</string>
+    <key>CFBundlePackageType</key>
+    <string>FMWK</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+  </dict>
+</plist>

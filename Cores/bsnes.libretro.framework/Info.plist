@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:00b2ef7c8a09f2a48aa2a7708a8c3cb2fb560c1c3f57840aa350015f75f1eb71
-size 712
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>CFBundleExecutable</key>
+    <string>bsnes.libretro</string>
+    <key>CFBundleName</key>
+    <string>bsnes.libretro</string>
+    <key>CFBundleIdentifier</key>
+    <string>bsnes.libretro</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+    <key>MinimumOSVersion</key>
+    <string>12.0</string>
+    <key>CFBundlePackageType</key>
+    <string>FMWK</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+  </dict>
+</plist>

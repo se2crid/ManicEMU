@@ -1,13 +1,14 @@
-Cores/**/*.libretro.framework/** filter=lfs diff=lfs merge=lfs -text
-Cores/Citra.framework/** filter=lfs diff=lfs merge=lfs -text
-System.core/**/*.manicskin filter=lfs diff=lfs merge=lfs -text
-System.core/**/*.wasm filter=lfs diff=lfs merge=lfs -text
-System.core/**/*.db filter=lfs diff=lfs merge=lfs -text
-System.core/**/*.pgf filter=lfs diff=lfs merge=lfs -text
-System.core/**/*.7z filter=lfs diff=lfs merge=lfs -text
-System.core/Libretro/system/fbneo/cheats/cheat.dat filter=lfs diff=lfs merge=lfs -text
-System.core/Libretro/system/fbneo/cheats/cheatsnes.dat filter=lfs diff=lfs merge=lfs -text
-System.core/Libretro/system/fbneo/cheats/wayder_cheat.dat filter=lfs diff=lfs merge=lfs -text
-System.core/Libretro/system/PPSSPP/vfpu/vfpu_log2_lut.dat filter=lfs diff=lfs merge=lfs -text
-System.core/j2mejs/java/classes.jar filter=lfs diff=lfs merge=lfs -text
-System.core/shared_font.bin filter=lfs diff=lfs merge=lfs -text
+# Binary assets are vendored directly so fork builds do not depend on Git LFS.
+Cores/**/*.libretro.framework/** -diff -text
+Cores/Citra.framework/** -diff -text
+System.core/**/*.manicskin -diff -text
+System.core/**/*.wasm -diff -text
+System.core/**/*.db -diff -text
+System.core/**/*.pgf -diff -text
+System.core/**/*.7z -diff -text
+System.core/Libretro/system/fbneo/cheats/cheat.dat -diff -text
+System.core/Libretro/system/fbneo/cheats/cheatsnes.dat -diff -text
+System.core/Libretro/system/fbneo/cheats/wayder_cheat.dat -diff -text
+System.core/Libretro/system/PPSSPP/vfpu/vfpu_log2_lut.dat -diff -text
+System.core/j2mejs/java/classes.jar -diff -text
+System.core/shared_font.bin -diff -text
