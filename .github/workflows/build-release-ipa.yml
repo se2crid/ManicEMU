@@ -36,23 +36,25 @@ jobs:
         with:
           xcode-version: "26.4"
 
-      - name: 4. Compile Project Archive
+      - name: 4. Compile Release Build
         run: |
-          xcodebuild clean archive \
+          xcodebuild \
             -project ManicEmu/ManicEmu.xcodeproj \
             -scheme "ManicEmuRelease" \
             -configuration Release \
-            -archivePath "$RUNNER_TEMP/ManicEmuRelease.xcarchive" \
+            -derivedDataPath "$RUNNER_TEMP/ManicEmuDerivedData" \
             -destination "generic/platform=iOS" \
             -skipPackagePluginValidation \
             ONLY_ACTIVE_ARCH=NO \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGNING_ALLOWED=NO \
+            PROVISIONING_PROFILE_SPECIFIER="" \
+            clean build
 
       - name: 5. Package .app into .ipa
         env:
-          APP_PATH: ${{ runner.temp }}/ManicEmuRelease.xcarchive/Products/Applications/ManicEmu.app
+          APP_PATH: ${{ runner.temp }}/ManicEmuDerivedData/Build/Products/Release-iphoneos/ManicEmu.app
           IPA_PATH: ${{ runner.temp }}/ManicEmuRelease.ipa
         run: |
           test -d "$APP_PATH"
