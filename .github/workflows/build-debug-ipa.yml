@@ -45,6 +45,7 @@ jobs:
             -archivePath "$RUNNER_TEMP/ManicEmuDebug.xcarchive" \
             -sdk iphoneos \
             -destination "generic/platform=iOS" \
+            -skipPackagePluginValidation \
             ONLY_ACTIVE_ARCH=NO \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
