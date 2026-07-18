@@ -21,15 +21,21 @@ jobs:
       - name: 1. Fetch Source Code
         uses: actions/checkout@v6
         with:
-          lfs: true
           submodules: recursive
 
-      - name: 2. Configure Xcode Environment
+      - name: 2. Fetch Git LFS Assets from Upstream
+        run: |
+          git config --local lfs.url \
+            https://github.com/Manic-EMU/ManicEMU.git/info/lfs
+          git lfs install --local
+          git lfs pull
+
+      - name: 3. Configure Xcode Environment
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: "26.0.1"
 
-      - name: 3. Compile Project Archive
+      - name: 4. Compile Project Archive
         run: |
           xcodebuild clean archive \
             -project ManicEmu/ManicEmu.xcodeproj \
@@ -44,7 +50,7 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             SWIFT_OPTIMIZATION_LEVEL="-Onone"
 
-      - name: 4. Package .app into .ipa
+      - name: 5. Package .app into .ipa
         env:
           APP_PATH: ${{ runner.temp }}/ManicEmuDebug.xcarchive/Products/Applications/ManicEmuDebug.app
           IPA_PATH: ${{ runner.temp }}/ManicEmuDebug.ipa
@@ -55,7 +61,7 @@ jobs:
           ditto -c -k --sequesterRsrc --keepParent \
             "$RUNNER_TEMP/Payload" "$IPA_PATH"
 
-      - name: 5. Store IPA as Workflow Artifact
+      - name: 6. Store IPA as Workflow Artifact
         if: env.UPLOAD_IPA == 'true'
         uses: actions/upload-artifact@v7
         with:
