@@ -30,6 +30,7 @@ jobs:
           echo "ede8b95b25fe4351d3e8b8ecc1398e589459d84b68650dfbda535c54f697638b  Cores/mame.libretro.framework/mame.libretro" \
             | shasum -a 256 -c -
           chmod +x Cores/mame.libretro.framework/mame.libretro
+          rm Cores/mame.libretro.framework/mame.libretro.part.*
 
       - name: 3. Configure Xcode Environment
         uses: maxim-lobanov/setup-xcode@v1
